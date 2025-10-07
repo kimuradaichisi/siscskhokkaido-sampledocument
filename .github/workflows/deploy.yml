@@ -34,21 +34,28 @@ jobs:
       - name: Install dependencies
         run: pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin plantuml-markdown
 
+      # ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+      # ここにGraphvizをインストールするステップを追加します
+      # ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
       # ステップ4: MkDocsでサイトをビルドする (HTMLファイルなどを生成)
+      - name: Install Graphviz
+        run: sudo apt-get update && sudo apt-get install -y graphviz
+
+      # ステップ5: MkDocsでサイトをビルドする (HTMLファイルなどを生成)
       - name: Build MkDocs site
         run: mkdocs build
 
-      # ステップ5: GitHub Pagesにデプロイする準備
+      # ステップ6: GitHub Pagesにデプロイする準備
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # ステップ6: ビルドした成果物(siteディレクトリ)をアップロードする
+      # ステップ7: ビルドした成果物(siteディレクトリ)をアップロードする
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './site'
 
-      # ステップ7: アップロードした成果物をGitHub Pagesにデプロイ(公開)する
+      # ステップ8: アップロードした成果物をGitHub Pagesにデプロイ(公開)する
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
