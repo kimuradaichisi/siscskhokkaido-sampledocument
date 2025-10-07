@@ -32,7 +32,7 @@ jobs:
 
       # ステップ3: MkDocsなどの必要なライブラリをインストールする
       - name: Install dependencies
-        run: pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin plantuml-markdown
+        run: pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin plantuml-markdown mkdocs-glightbox 
 
       # ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
       # ここにGraphvizをインストールするステップを追加します
