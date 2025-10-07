@@ -42,7 +42,3 @@ plugins:
   - search
   - awesome-pages
 
-nav:
-- はじめに: index.md
-- MVP戦略: MVP戦略.md
-- コンセプトその２: コンセプトその２.md

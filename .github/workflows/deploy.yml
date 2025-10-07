@@ -32,7 +32,7 @@ jobs:
 
       # ステップ3: MkDocsなどの必要なライブラリをインストールする
       - name: Install dependencies
-        run: pip install mkdocs mkdocs-material mkdocs-plantuml-plugin
+        run: pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin plantuml-markdown
 
       # ステップ4: MkDocsでサイトをビルドする (HTMLファイルなどを生成)
       - name: Build MkDocs site
