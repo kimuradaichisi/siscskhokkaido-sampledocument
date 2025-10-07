@@ -1,0 +1,54 @@
+# ワークフローの名前
+name: Deploy MkDocs Site to GitHub Pages
+
+# ワークフローが実行されるトリガー
+on:
+  # mainブランチにpushされた時に実行する
+  push:
+    branches:
+      - main
+
+# ワークフローが必要とする権限の設定
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 実行されるジョブを定義
+jobs:
+  deploy:
+    # ubuntuの最新版環境で実行する
+    runs-on: ubuntu-latest
+    steps:
+      # ステップ1: リポジトリのコードをチェックアウトする
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ステップ2: Python環境をセットアップする
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      # ステップ3: MkDocsなどの必要なライブラリをインストールする
+      - name: Install dependencies
+        run: pip install mkdocs mkdocs-material mkdocs-plantuml-plugin
+
+      # ステップ4: MkDocsでサイトをビルドする (HTMLファイルなどを生成)
+      - name: Build MkDocs site
+        run: mkdocs build
+
+      # ステップ5: GitHub Pagesにデプロイする準備
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # ステップ6: ビルドした成果物(siteディレクトリ)をアップロードする
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './site'
+
+      # ステップ7: アップロードした成果物をGitHub Pagesにデプロイ(公開)する
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

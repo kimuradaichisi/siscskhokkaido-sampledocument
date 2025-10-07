@@ -1,0 +1,48 @@
+site_name: My Docs
+site_url: https://your-domain.com/ # 自身のドメインに置き換えてください
+repo_url: https://your-repo-url.com/ # GitリポジトリのURLがあれば設定
+repo_name: GitHub # または GitLab など
+edit_uri: edit/main/docs # GitHubなどの編集リンクを設定する場合
+
+# テーマ設定
+theme:
+  name: material # MkDocs Material テーマを使用
+  language: ja # UIの日本語化
+  # custom_dir: theme # <<ここを削除またはコメントアウト>>
+  palette: # カラーパレット (ライト/ダークモード切り替え可能に)
+    - scheme: default # ライトモード
+      primary: teal # プライマリカラー
+      accent: deep orange # アクセントカラー
+      toggle:
+        icon: material/weather-night # ダークモード切り替えアイコン
+        name: ダークモードに切り替える
+    - scheme: slate # ダークモード
+      primary: blue grey # プライマリカラー
+      accent: orange # アクセントカラー
+      toggle:
+        icon: material/weather-sunny # ライトモード切り替えアイコン
+        name: ライトモードに切り替える
+  font: # フォント設定 (任意)
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png # ファビコンのパス (任意)
+  logo: assets/logo.png # ロゴ画像のパス (任意)
+  features: # Materialテーマの追加機能
+    - navigation.expand # ナビゲーションの自動展開
+    - navigation.instant # 高速ページ遷移
+    - navigation.tabs # トップレベルのナビゲーションをタブ表示
+    - navigation.indexes # ナビゲーションにindex.mdを表示
+    - search.highlight # 検索結果のハイライト表示
+    - search.share # 検索結果の共有リンク
+    - search.suggest # 検索候補表示
+    - toc.integrate # 目次をサイドバーに統合
+
+# プラグイン設定
+plugins:
+  - search
+  - awesome-pages
+
+nav:
+- はじめに: index.md
+- MVP戦略: MVP戦略.md
+- コンセプトその２: コンセプトその２.md

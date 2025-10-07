@@ -1,0 +1,55 @@
+# =============================================================================
+# MkDocs specific files
+# =============================================================================
+# The build output directory
+site/
+
+# MkDocs backup file
+mkdocs.yml.bak
+
+
+# =============================================================================
+# Python general
+# =============================================================================
+# Byte-compiled / optimized / C extensions
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python Virtual Environments
+# Different tools use different names: venv, .venv, env, .env, etc.
+venv/
+.venv/
+env/
+.env/
+ENV/
+.ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+
+# =============================================================================
+# IDE / Editor specific
+# =============================================================================
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+
+# =============================================================================
+# OS specific
+# =============================================================================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
