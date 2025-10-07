@@ -1,3 +1,4 @@
+```plantuml
 @startuml
 title AIによる改善提案フローのシーケンス
 
@@ -27,3 +28,4 @@ deactivate FlowHook
 deactivate Editor
 
 @enduml
+```
